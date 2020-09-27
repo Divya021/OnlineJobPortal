@@ -1,0 +1,77 @@
+{% extends 'user_nav.html' %}
+{% block body %}
+
+<center><marquee style = "font-family : 'Monotype Corsiva' ; font-size:30px;color :darkcyan
+ ; background-color:black;font-weight : bold;">Job Detail</marquee></center><hr>
+
+ <div class="container" style="background-color:Cadetblue;width:700px;height:800px;margin-left:30%">
+     <div class="row" style="margin-left:30%;margin-top:3%">
+  <div class="col-md-12">
+            <img src="{{data.image.url}}" style="width:300px;height:200px">
+        </div>
+     </div>
+     <div class="row" style="margin-left:35%;font-size:35px;color:maroon">
+         <div class="col-md-12">
+             <u>  {{data.title}}</u>
+         </div>
+     </div>
+     <div class="row" style="margin-left:35%;font-size:20px ;color:white">
+         <div class="col-md-12">
+              {{data.recruiter.company}}
+         </div>
+     </div>
+     <div class="row" style="margin-left:35%;font-size:25px;margin-top:10px">
+         <div class="col-md-12">
+             <i class="fa fa-inr" style="margin-right:4px;font-size:30px"></i><span style="margin-left:20px;color:white">{{data.position}} </span></a>
+         </div>
+     </div>
+      <div class="row" style="margin-left:35%;font-size:25px">
+          <div class="col-md-6">
+             <i class="fa fa-map-marker" style="margin-right:4px;font-size:30px"></i><span style="margin-left:20px;color:white">{{data.location}} </span></a>
+         </div>
+     </div>
+
+ <div class="row" style="margin-left:35%;font-size:25px">
+         <div class="col-md-12">
+             <i class="fa fa-child" style="margin-right:4px;font-size:30px"></i><span style="margin-left:15px;color:white">{{data.experience}} </span>[Experience] </a>
+         </div>
+     </div>
+     <div class="row" style="margin-left:35%;font-size:26px;color:navy">
+         <div class="col-md-6">
+            Description ...
+                     </div>
+     </div>
+     <div class="row" style="margin-left:40%;font-size:25px;color:white">
+         <div class="col-md-12">
+            {{data.description}} </span></a>
+         </div>
+     </div>
+      <div class="row" style="margin-left:35%;font-size:20px;color:navy">
+         <div class="col-md-12">
+            Post Date :-<span style="margin-left:20px;font-size:15px;color:white">{{data.start_date}}
+         </div>
+     </div>
+      <div class="row" style="margin-left:35%;font-size:20px;color:navy">
+         <div class="col-md-12">
+             Last Date :-<span style="margin-left:20px;font-size:15px;color:white">{{data.end_date}}</span>
+         </div>
+     </div>
+       <div class="row" style="margin-left:35%;font-size:25px;color:navy">
+         <div class="col-md-8">
+             Skills :-<span style="margin-left:20px;font-size:25px;color:white">{{data.skills}}</span>
+         </div>
+     </div>
+      <div class="row" style="margin-left:35%;font-size:25px;color:navy">
+         <div class="col-md-8">
+            <a href="{% url 'apply' data.id %}"> <button type="submit" class="btn btn-danger" style="width:200px;height:40px;margin-bottom:7%;background-color:maroon;margin-top:10%;font-size:20px">Apply Now</button>
+
+         </div>
+     </div>
+ </div>
+<script>
+            var el_up = document.getElementById("GFG_UP");
+
+            el_up.innerHTML =
+                "Click on the LINK for further confirmation.";
+</script>
+{% endblock %}
